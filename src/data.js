@@ -28,5 +28,5 @@ const installPercentFees = {
   premium: 15,
   excelium: 20,
 };
-
+MongoManager.openMongoConnection();
 module.exports = {agents,unitPrices,installPercentFees};
