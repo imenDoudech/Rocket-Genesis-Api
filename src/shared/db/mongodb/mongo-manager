@@ -8,7 +8,7 @@ const openMongoConnection = () => {
     console.log("connected to MongoDB");
   });
   mongoose.connect(
-    "mongodb+srv://imen:<Bonjour1234>@cluster1.bkcgm5q.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://imen:Bonjour1234@cluster1.bkcgm5q.mongodb.net/Project1?retryWrites=true&w=majority"
   );
 };
 
