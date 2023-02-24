@@ -1,3 +1,4 @@
+const agents = require ('C:\\Users\\Admin\\Desktop\\formations2023\\web\\Codeboxx\\Senaine5\\Rocket-Genesis-Api\\src\\shared\\resources\\Agents.json')
 
 
 const helloWorld = async (req, res) => {
@@ -5,7 +6,7 @@ const helloWorld = async (req, res) => {
 };
 
 const status = async (req, res) => {
-  res.send("Name: " + process.env.ENV_NAME + "  Port: " + Port);
+  res.send("  Port: " + Port);
 };
 
 const error = async (req, res) => {
@@ -13,7 +14,7 @@ const error = async (req, res) => {
     "Erreur 404: Bad request : Impossible de convertir entre les ID d’abonnement Commerce et Azure Active Directory."
   );
 };
-/*
+
 const emailList = async (req, res) => {  
  
   const emails = [];
@@ -47,12 +48,12 @@ const region = async (req, res) => {
     region + " : { Frais Moyen: " + feeM + " , Note moyenne:" + ratingM + " }"
   );
 };
-*/
+
 const residential = async (req, res) => {
-  const calcul1 = require("../shared/resources/calcul");
+  const calcul1 = require('C:\\Users\\Admin\\Desktop\\formations2023\\web\\Codeboxx\\Senaine5\\Rocket-Genesis-Api\\src\\shared\\resources\\calcul.js');
   //appeler les fonctons de calcul
   let assenceursR = calcul1.calcResidentialElev(3, 100);
-  let prixTT = calcul1.calculatTTP(100, 3, "excelium", assenceursR);
+  let prixTT = calcul1.calculatTTP(100, 3, "premium", assenceursR);
   let infos = {
     Assenceurs_requis: assenceursR,
     Prix_Total: prixTT,
@@ -78,8 +79,8 @@ module.exports = {
   helloWorld,
   status,
   error,
-  //emailList,
- // region,
+  emailList,
+  region,
   residential,
   contact,
 };
