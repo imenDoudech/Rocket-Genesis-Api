@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
+const fs = require('fs');
 require("dotenv").config();
+const db = mongoose.connection;
+const agent = require("./shemas.js");
+
 
 const openMongoConnection = () => {
-  const db = mongoose.connection;
+ 
   db.on("error", console.error.bind(console, "connection error:"));
   db.once("open", function callback() {
     console.log("connected to MongoDB");
@@ -10,9 +14,47 @@ const openMongoConnection = () => {
   mongoose.connect(
     "mongodb+srv://imen:Bonjour1234@cluster1.bkcgm5q.mongodb.net/Project1?retryWrites=true&w=majority"
   );
-};
+}
+  
+agent.find({}, function(err, data) { console.log(err, data, data.length); });
+
+
+
+
+
+
+const creationCollection = (collectionName) =>{
+
+  let collections = db.collections;
+  let names = [];
+  
+  Object.entries(collections).forEach(function(key, index, arr) {
+      names.push(arr);
+      
+  });
+  
+  console.log(names);
+
+  for (let i=0; i< names.length; i++){
+    if (collectionName != names[i]){
+      db.createCollection(collectionName);
+      console.log("collection cree !")
+ 
+    }else 
+    console.log("collection existante !")
+
+  }
+    
+  };
+
+
+  
+
+
+
+
 
 mongoose.set("strictQuery", true);
 
 
-module.exports = { openMongoConnection };
+module.exports = { openMongoConnection,creationCollection};

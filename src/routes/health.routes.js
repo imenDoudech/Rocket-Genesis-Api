@@ -9,6 +9,7 @@ const registerHealthRoutes1 = (app) => {
 const registerHealthRoutes2 = (app) => {
   app.get("/error", HealthController.error);
 };
+
 /*
 const registerHealthRoutes3 = (app) => {
   app.get("/emailList", HealthController.emailList);

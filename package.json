@@ -18,7 +18,8 @@
   "homepage": "https://github.com/imenDoudech/Rocket-Genesis-Api#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "mongoose": "^6.9.2"
+    "mongoose": "^6.9.2",
+    "sort-json-array": "^0.1.7"
   },
   "description": ""
 }
