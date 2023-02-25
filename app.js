@@ -6,7 +6,8 @@ const app = Express();
 
 const port = process.env.PORT || 3004;
 const MongoManager = require("./src/shared/db/mongodb/mongo-manager");
-//MongoManager.openMongoConnection();
+MongoManager.openMongoConnection();
+//MongoManager.creationCollection("ma collection");
 
 // Import routes
 const HealthRoutes = require("./src/routes/health.routes");
@@ -35,9 +36,6 @@ AgentRoutes.registerAgentRoutes5(app);
 RegionRoutes.registerRegionRoutes(app);
 RegionRoutes.registerRegionRoutes2(app);
 RegionRoutes.registerRegionRoutes3(app);
-
-
-//MongoManager.creationCollection("coll3");
 
 
 app.listen(port, () => {

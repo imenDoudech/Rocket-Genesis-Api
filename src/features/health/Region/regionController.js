@@ -7,6 +7,8 @@ const AgentController = require ('C:\\Users\\Admin\\Desktop\\formations2023\\web
 const region = require("C:\\Users\\Admin\\Desktop\\formations2023\\web\\Codeboxx\\Senaine5\\Rocket-Genesis-Api\\src\\shared\\db\\mongodb\\shemaRegion.js");
 
 //Endpoint - '/region-create'
+
+//Trouver les meilleurs agents
 const meillersAgents= (region)=>{
     
     const resultR = agents.filter((agent) => agent.region.includes(region));
@@ -18,11 +20,13 @@ const meillersAgents= (region)=>{
         })
   };
   
-  const top_agents=[resultR[0],resultR[1],resultR[2]];
+  const top_agents=[resultR[0],resultR[1],resultR[2]]; //3 meilleurs agents
   return(top_agents);
   
   
   }
+
+  //Calculer le total de ventes pour chaque région
 let totalVentes=0;
 const totalVente= (region)=>{
     
@@ -36,7 +40,7 @@ if (resultR.length < 1) {
     for (let i = 0; i < resultR.length; i++) {
         totalVentes = totalVentes + JSON.parse(resultR[i].Sales);
       }
-      return totalVentes;
+      return totalVentes; // retourner le total de ventes
 }
 }
 

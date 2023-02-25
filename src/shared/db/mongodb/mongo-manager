@@ -4,15 +4,15 @@ require("dotenv").config();
 const db = mongoose.connection;
 const agent = require("./shemas.js");
 
-
+//Se connecter à MongoDB
 const openMongoConnection = () => {
  
-  db.on("error", console.error.bind(console, "connection error:"));
+  db.on("error", console.error.bind(console, "connection error:")); //erreur
   db.once("open", function callback() {
-    console.log("connected to MongoDB");
+    console.log("connected to MongoDB");//confirmation de connection
   });
   mongoose.connect(
-    "mongodb+srv://imen:Bonjour1234@cluster1.bkcgm5q.mongodb.net/Project1?retryWrites=true&w=majority"
+    "mongodb+srv://imen:Bonjour1234@cluster1.bkcgm5q.mongodb.net/Project1?retryWrites=true&w=majority" //lien de ma DB
   );
 }
   
@@ -22,7 +22,7 @@ agent.find({}, function(err, data) { console.log(err, data, data.length); });
 
 
 
-
+//Création d'une collection de donnée dans ma base
 const creationCollection = (collectionName) =>{
 
   let collections = db.collections;
@@ -35,6 +35,7 @@ const creationCollection = (collectionName) =>{
   
   console.log(names);
 
+  //Vérifier si la collection existe déja
   for (let i=0; i< names.length; i++){
     if (collectionName != names[i]){
       db.createCollection(collectionName);

@@ -1,4 +1,6 @@
 const mongoose = require ("mongoose");
+
+//Schema de l'agent
 const agentShema = mongoose.Schema({
     first_name:{type :String, required : true},
     last_name:{type :String, required : true},
@@ -10,7 +12,10 @@ const agentShema = mongoose.Schema({
 
 });
 
+//Modèle de l'agent
 const Agent = mongoose.model("Agent", agentShema);
 
 
+
 module.exports = Agent;
+

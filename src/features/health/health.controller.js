@@ -1,20 +1,22 @@
 const agents = require ('C:\\Users\\Admin\\Desktop\\formations2023\\web\\Codeboxx\\Senaine5\\Rocket-Genesis-Api\\src\\shared\\resources\\Agents.json')
 
-
+//Endpoint - '/hello'
 const helloWorld = async (req, res) => {
   res.send("Hello World!!");
 };
-
+//Endpoint - '/status'
 const status = async (req, res) => {
   res.send("  Port: " + Port);
 };
 
+//Endpoint - '/error'
 const error = async (req, res) => {
   res.send(
     "Erreur 404: Bad request : Impossible de convertir entre les ID d’abonnement Commerce et Azure Active Directory."
   );
 };
 
+//Endpoint - '/emailList'
 const emailList = async (req, res) => {  
  
   const emails = [];
@@ -24,6 +26,7 @@ const emailList = async (req, res) => {
   res.json(emails);
 };
 
+//Endpoint - '/region'
 const region = async (req, res) => {
   let feeT = 0;
   let ratingT = 0;
@@ -49,6 +52,7 @@ const region = async (req, res) => {
   );
 };
 
+//Endpoint - '/residential'
 const residential = async (req, res) => {
   const calcul1 = require('C:\\Users\\Admin\\Desktop\\formations2023\\web\\Codeboxx\\Senaine5\\Rocket-Genesis-Api\\src\\shared\\resources\\calcul.js');
   //appeler les fonctons de calcul
@@ -61,6 +65,7 @@ const residential = async (req, res) => {
   res.send(infos);
 };
 
+//Endpoint - '/contact'
 const contact = async (req, res) => {
   const last_name = req.body.last_name;
   const message = req.body.message;
